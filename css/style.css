@@ -1,0 +1,61 @@
+/* ============================================================
+   Terminal/sci-fi portfolio theme
+   Palette: deep space bg, cyan accent, amber secondary
+   ============================================================ */
+
+:root {
+  --bg: #05080f;
+  --bg-panel: #0a1120;
+  --bg-raised: #0e1628;
+  --line: #1c2a45;
+  --text: #c9d6e8;
+  --text-dim: #6d7f99;
+  --accent: #6ee7b7;
+  --accent-dim: rgba(94, 234, 212, 0.15);
+  --amber: #fbbf24;
+  --danger: #f87171;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+  --sans: "Space Grotesk", system-ui, sans-serif;
+  --max-w: 1100px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Subtle CRT scanline overlay */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 3px,
+    rgba(0, 0, 0, 0.12) 3px 4px
+  );
+  opacity: 0.5;
+}
+
+/* Faint grid backdrop */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(94, 234, 212, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 234, 212, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 50% 0%, black 30%, transparent 75%);
+}
+
+::selection { background: var(--accent-dim); color: var(--accent); }
