@@ -159,3 +159,119 @@ main {
   font-size: 0.85rem;
   color: var(--text-dim);
 }
+
+/* ================= HERO ================= */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 4rem);
+  min-height: 78vh;
+  padding: clamp(3rem, 8vw, 5rem) 0;
+}
+
+.hero__title {
+  font-size: clamp(2.8rem, 8vw, 4.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+}
+
+.cursor {
+  color: var(--accent);
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.hero__tagline {
+  color: var(--text-dim);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  max-width: 46ch;
+  margin-bottom: 2rem;
+}
+
+.hero__tagline strong { color: var(--accent); font-weight: 500; }
+
+.hero__cta { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
+.btn {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--bg);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: 0 0 18px var(--accent-dim);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn--ghost:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Photo frame with corner brackets */
+.photo-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-width: 380px;
+  justify-self: center;
+  width: 100%;
+}
+
+.photo-frame::before,
+.photo-frame::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--accent);
+  z-index: 1;
+}
+
+.photo-frame::before {
+  top: -8px;
+  left: -8px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.photo-frame::after {
+  bottom: -8px;
+  right: -8px;
+  border-left: none;
+  border-top: none;
+}
+
+.photo-frame__label {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
