@@ -39,3 +39,22 @@ track.addEventListener("scroll", () => {
   dots.forEach((d, j) => d.classList.toggle("active", j === i));
 });
 dots[0].classList.add("active");
+
+// ---- Scroll reveal ----
+const revealTargets = document.querySelectorAll(
+  ".section__title, .section__kicker, .terminal, .about__bio, .card, .link-card, .carousel"
+);
+revealTargets.forEach((el) => el.classList.add("reveal"));
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+revealTargets.forEach((el) => observer.observe(el));
