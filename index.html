@@ -57,27 +57,48 @@
     <!-- ================= PICS / CAROUSEL ================= -->
     <section id="carousel" class="section">
       <p class="section__kicker">// PICS - GALLERY</p>
-      <h2 class="section__title">Snapshots of my Life.</h2>
+      <h2 class="section__title">Snapshots of my <span class="accent-text">Life.</span></h2>
 
       <div class="carousel">
-        <button class="carousel__btn carousel__btn--prev" aria-label="Previous photo">&#8249;</button>
-        <div class="carousel__track">
-          <!-- TODO: replace each placeholder slide with your photos:
-               <div class="carousel__slide"><img src="assets/pic1.jpg" alt="description" /></div> -->
-          <div class="carousel__slide"><div class="photo-frame__placeholder">[ Photo 1 ]</div></div>
-          <div class="carousel__slide"><div class="photo-frame__placeholder">[ Photo 2 ]</div></div>
-          <div class="carousel__slide"><div class="photo-frame__placeholder">[ Photo 3 ]</div></div>
-          <div class="carousel__slide"><div class="photo-frame__placeholder">[ Photo 4 ]</div></div>
+        <div class="carousel__viewport">
+          <!-- Featured slot — swap this card for your latest video / proudest project.
+               It always sits one step ahead in the rotation. -->
+          <div class="carousel__slide carousel__slide--feature" data-caption="// your featured thing — a video, project, whatever you're proud of">
+            <div class="feature-card">
+              <div class="feature-card__label">Latest creation</div>
+              <div class="feature-card__thumb">
+                <div class="photo-frame__placeholder">[ Video Img ]</div>
+              </div>
+              <h3 class="feature-card__title">Your Latest Thing</h3>
+              <p class="feature-card__meta">&#128065; 0 &nbsp;&#128077; 0 &nbsp;&#128172; 0</p>
+            </div>
+          </div>
+          <!-- TODO: photo slides — swap placeholders for
+               <img src="assets/pic1.jpg" alt="..." /> and set each data-caption -->
+          <div class="carousel__slide" data-caption="// caption for photo 1">
+            <div class="photo-frame__placeholder">[ Photo 1 ]</div>
+          </div>
+          <div class="carousel__slide" data-caption="// caption for photo 2">
+            <div class="photo-frame__placeholder">[ Photo 2 ]</div>
+          </div>
+          <div class="carousel__slide" data-caption="// caption for photo 3">
+            <div class="photo-frame__placeholder">[ Photo 3 ]</div>
+          </div>
         </div>
-        <button class="carousel__btn carousel__btn--next" aria-label="Next photo">&#8250;</button>
+
+        <div class="carousel__bar">
+          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
+          <p class="carousel__caption"></p>
+          <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
+        </div>
+        <div class="carousel__dots"></div>
       </div>
-      <div class="carousel__dots"></div>
     </section>
 
     <!-- ================= SYSTEM / ABOUT ================= -->
     <section id="about" class="section">
       <p class="section__kicker">// SYSTEM - ABOUT</p>
-      <h2 class="section__title">Diagnostics.</h2>
+      <h2 class="section__title">Diagnostics<span class="accent-text">.</span></h2>
 
       <div class="terminal">
         <div class="terminal__bar">
@@ -109,7 +130,7 @@
     <!-- ================= LAB / PROJECTS ================= -->
     <section id="lab" class="section">
       <p class="section__kicker">// The Lab — Featured Projects</p>
-      <h2 class="section__title">What's in the Workshop?</h2>
+      <h2 class="section__title">What's in the <span class="accent-text">Workshop?</span></h2>
 
       <div class="lab__grid">
         <!-- TODO: duplicate/edit project cards; swap the placeholder for a
@@ -172,7 +193,7 @@
     <!-- ================= COMMS / LINKS ================= -->
     <section id="links" class="section">
       <p class="section__kicker">// Comms — Find Me Online</p>
-      <h2 class="section__title">Open Channels.</h2>
+      <h2 class="section__title">Open <span class="accent-text">Channels.</span></h2>
 
       <div class="comms__grid">
         <!-- TODO: your Discord invite -->
