@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- TODO: page title -->
-  <title>Your Name — Portfolio</title>
+  <title>Karan — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <canvas id="stars" aria-hidden="true"></canvas>
   <div class="scanlines" aria-hidden="true"></div>
@@ -18,14 +22,14 @@
   <header class="nav">
     <nav class="nav__links">
       <a href="#hero">[ Init ]</a>
-      <a href="#carousel">[ Pics ]</a>
+      <a href="#experience">[ Work ]</a>
       <a href="#about">[ System ]</a>
       <a href="#lab">[ Lab ]</a>
       <a href="#links">[ Comms ]</a>
     </nav>
     <!-- TODO: your field / version tag -->
     <div class="nav__status">
-      <span class="status-dot"></span> Your Field · v1.0.0 · Online
+      <span class="status-dot"></span> Software Developer · v1.0.0 · Online
     </div>
   </header>
 
@@ -34,10 +38,10 @@
     <section id="hero" class="hero">
       <div class="hero__text">
         <!-- TODO: your name / brand -->
-        <h1 class="hero__title">YourName<span class="cursor">_</span></h1>
+        <h1 class="hero__title">Karan <span class="cursor">_</span></h1>
         <!-- TODO: your tagline -->
         <p class="hero__tagline">
-          Engineer. Programmer. Creator. Follow me on my journey as I document
+          Programmer. Gamer. Fitness Enthusiast. Follow me on my journey as I document
           my efforts to become a <strong>Your Goal Here</strong>.
         </p>
         <div class="hero__cta">
@@ -54,44 +58,50 @@
       </div>
     </section>
 
-    <!-- ================= PICS / CAROUSEL ================= -->
-    <section id="carousel" class="section">
-      <p class="section__kicker">// PICS - GALLERY</p>
-      <h2 class="section__title">Snapshots of my <span class="accent-text">Life.</span></h2>
+    <!-- ================= EXPERIENCE ================= -->
+    <section id="experience" class="section">
+      <p class="section__kicker">// WORK - EXPERIENCE</p>
+      <h2 class="section__title">Where I've <span class="accent-text">Worked.</span></h2>
 
-      <div class="carousel">
-        <div class="carousel__viewport">
-          <!-- Featured slot — swap this card for your latest video / proudest project.
-               It always sits one step ahead in the rotation. -->
-          <div class="carousel__slide carousel__slide--feature" data-caption="// your featured thing — a video, project, whatever you're proud of">
-            <div class="feature-card">
-              <div class="feature-card__label">Latest creation</div>
-              <div class="feature-card__thumb">
-                <div class="photo-frame__placeholder">[ Video Img ]</div>
-              </div>
-              <h3 class="feature-card__title">Your Latest Thing</h3>
-              <p class="feature-card__meta">&#128065; 0 &nbsp;&#128077; 0 &nbsp;&#128172; 0</p>
+      <div class="exp__grid">
+        <!-- TODO: swap each header box for a company logo/image -->
+        <article class="exp-card">
+          <div class="exp-card__header">
+            <div class="photo-frame__placeholder">[ Credence Analytics ]</div>
+          </div>
+          <div class="exp-card__body">
+            <h3 class="exp-card__title">Product Developer Intern</h3>
+            <p class="exp-card__company">Credence Analytics</p>
+            <p class="exp-card__timeline">Nov 2024 &ndash; Jun 2025</p>
+            <div class="exp-card__stack">
+              <span>Node.js</span><span>Oracle</span><span>Automated Testing</span>
             </div>
+            <p class="exp-card__impact-label">Key Impact:</p>
+            <ul class="exp-card__impact">
+              <li>Engineered 10+ feature updates <span class="metric">(UX +20%)</span></li>
+              <li>Optimized 20+ complex Oracle queries <span class="metric">(Query speed +25%)</span></li>
+            </ul>
           </div>
-          <!-- TODO: photo slides — swap placeholders for
-               <img src="assets/pic1.jpg" alt="..." /> and set each data-caption -->
-          <div class="carousel__slide" data-caption="// caption for photo 1">
-            <div class="photo-frame__placeholder">[ Photo 1 ]</div>
-          </div>
-          <div class="carousel__slide" data-caption="// caption for photo 2">
-            <div class="photo-frame__placeholder">[ Photo 2 ]</div>
-          </div>
-          <div class="carousel__slide" data-caption="// caption for photo 3">
-            <div class="photo-frame__placeholder">[ Photo 3 ]</div>
-          </div>
-        </div>
+        </article>
 
-        <div class="carousel__bar">
-          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
-          <p class="carousel__caption"></p>
-          <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
-        </div>
-        <div class="carousel__dots"></div>
+        <article class="exp-card">
+          <div class="exp-card__header">
+            <div class="photo-frame__placeholder">[ Unipolar Technologies ]</div>
+          </div>
+          <div class="exp-card__body">
+            <h3 class="exp-card__title">Software Developer Intern</h3>
+            <p class="exp-card__company">Unipolar Technologies</p>
+            <p class="exp-card__timeline">Feb 2024 &ndash; Jun 2024</p>
+            <div class="exp-card__stack">
+              <span>Express.js</span><span>MongoDB</span><span>React.js</span><span>REST APIs</span>
+            </div>
+            <p class="exp-card__impact-label">Key Impact:</p>
+            <ul class="exp-card__impact">
+              <li>Built MERN e-commerce platform with 500+ products</li>
+              <li>Integrated 12+ RESTful APIs <span class="metric">(User engagement +35%)</span></li>
+            </ul>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -111,19 +121,20 @@
         <!-- TODO: fill in your own status lines -->
         <ul class="terminal__lines">
           <li><span class="t-key">&gt;System_Status:</span> <span class="t-ok">Active &#10022;</span></li>
-          <li><span class="t-key">&gt;Location:</span> Your City, Planet Earth</li>
-          <li><span class="t-key">&gt;Mission:</span> What you're working toward</li>
+          <li><span class="t-key">&gt;Location:</span> Mumbai, India</li>
+          <li><span class="t-key">&gt;Quest:</span>Full-stack engineer mastering modern software architecture</li>
           <li><span class="t-key">&gt;Specialization:</span> [ Skill 1, Skill 2, Skill 3 ]</li>
-          <li><span class="t-key">&gt;Currently_Building:</span> Your current project</li>
-          <li><span class="t-key">&gt;Status:</span> A fun personal status line</li>
+          <li><span class="t-key">&gt;Currently_Building:</span> Building a Simulation Software</li>
+          <li><span class="t-key">&gt;Status:</span> Running low on sleep, high on CPU cycles ⚡</li>
         </ul>
       </div>
 
       <!-- TODO: your bio paragraph -->
       <p class="about__bio">
-        Write your story here — where you started, what you're studying or
-        building, and where you're headed. A couple of sentences about your
-        journey and what makes you tick goes a long way.
+        Started out trying to break and hack video games as a kid
+        Curiosity turned into writing code, then building full-stack systems
+        Now building simulation tools and leveling up every day<br />
+        Next step: architecting bigger, faster, and smarter systems
       </p>
     </section>
 
@@ -136,21 +147,27 @@
         <!-- TODO: duplicate/edit project cards; swap the placeholder for a
              screenshot or render of each project -->
         <article class="card">
-          <div class="card__thumb"><div class="photo-frame__placeholder">[ Project Img ]</div></div>
+          <div class="card__thumb">
+            <div class="photo-frame__placeholder">[ Project Img ]</div>
+          </div>
           <h3 class="card__title">Project One</h3>
           <p class="card__desc">One or two lines about what this project does and what you built it with.</p>
           <a class="card__link" href="#" target="_blank" rel="noopener">View &rarr;</a>
         </article>
 
         <article class="card">
-          <div class="card__thumb"><div class="photo-frame__placeholder">[ Project Img ]</div></div>
+          <div class="card__thumb">
+            <div class="photo-frame__placeholder">[ Project Img ]</div>
+          </div>
           <h3 class="card__title">Project Two</h3>
           <p class="card__desc">One or two lines about what this project does and what you built it with.</p>
           <a class="card__link" href="#" target="_blank" rel="noopener">View &rarr;</a>
         </article>
 
         <article class="card">
-          <div class="card__thumb"><div class="photo-frame__placeholder">[ Project Img ]</div></div>
+          <div class="card__thumb">
+            <div class="photo-frame__placeholder">[ Project Img ]</div>
+          </div>
           <h3 class="card__title">Project Three</h3>
           <p class="card__desc">One or two lines about what this project does and what you built it with.</p>
           <a class="card__link" href="#" target="_blank" rel="noopener">View &rarr;</a>
@@ -219,10 +236,12 @@
   <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <!-- TODO: your name / sign-off -->
-    <p>&copy; <span id="year">2026</span> YourName — All systems nominal.</p>
-    <p class="footer__meta">Built with HTML · CSS · Vanilla JS · &#9749; &amp; Late Nights&nbsp; | &nbsp;SN: ZN-2026-PORT-042</p>
+    <p>&copy; <span id="year">2026</span> karan — All systems nominal.</p>
+    <p class="footer__meta">Built with HTML · CSS · Vanilla JS · &#9749; &amp; Late Nights&nbsp; | &nbsp;
+      IND-2026-PORT-80</p>
   </footer>
 
   <script src="js/script.js"></script>
 </body>
+
 </html>

@@ -5,50 +5,9 @@
 // ---- Footer year ----
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ---- Carousel (coverflow) ----
-const slides = Array.from(document.querySelectorAll(".carousel__slide"));
-const dotsWrap = document.querySelector(".carousel__dots");
-const caption = document.querySelector(".carousel__caption");
-const prevBtn = document.querySelector(".carousel__btn--prev");
-const nextBtn = document.querySelector(".carousel__btn--next");
-let active = 0;
-
-slides.forEach((_, i) => {
-  const dot = document.createElement("button");
-  dot.setAttribute("aria-label", "Go to slide " + (i + 1));
-  dot.addEventListener("click", () => goTo(i));
-  dotsWrap.appendChild(dot);
-});
-const dots = Array.from(dotsWrap.children);
-
-function layout() {
-  slides.forEach((s, i) => {
-    const off = i - active;
-    const abs = Math.abs(off);
-    s.style.transform =
-      "translate(-50%, -50%) translateX(" + off * 74 + "%) scale(" +
-      (abs === 0 ? 1 : 0.7) + ") rotateY(" + off * -20 + "deg)";
-    s.style.zIndex = 20 - abs;
-    s.style.opacity = abs > 2 ? "0" : String(1 - abs * 0.3);
-    s.style.pointerEvents = abs <= 1 ? "auto" : "none";
-  });
-  caption.textContent = slides[active].dataset.caption || "";
-  dots.forEach((d, i) => d.classList.toggle("active", i === active));
-}
-
-function goTo(i) {
-  active = (i + slides.length) % slides.length;
-  layout();
-}
-
-prevBtn.addEventListener("click", () => goTo(active - 1));
-nextBtn.addEventListener("click", () => goTo(active + 1));
-slides.forEach((s, i) => s.addEventListener("click", () => goTo(i)));
-layout();
-
 // ---- Scroll reveal ----
 const revealTargets = document.querySelectorAll(
-  ".section__title, .section__kicker, .terminal, .about__bio, .card, .link-card, .carousel"
+  ".section__title, .section__kicker, .terminal, .about__bio, .card, .link-card, .exp-card"
 );
 revealTargets.forEach((el) => el.classList.add("reveal"));
 
