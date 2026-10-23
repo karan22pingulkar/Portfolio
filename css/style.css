@@ -333,6 +333,25 @@ main {
   padding: 0.75rem;
 }
 
+.exp-card__brandrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+}
+
+.exp-card__logo {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+}
+
+.exp-card__logo--chip {
+  background: #fff;
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+
 .exp-card__brand {
   font-family: var(--mono);
   font-weight: 700;
