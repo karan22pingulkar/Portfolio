@@ -222,9 +222,10 @@ main {
 }
 
 .btn:hover {
-  background: transparent;
-  color: var(--accent);
-  box-shadow: 0 0 18px var(--accent-dim);
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--bg);
+  box-shadow: 0 0 18px rgba(255, 209, 102, 0.35);
 }
 
 .btn--ghost {
@@ -233,7 +234,7 @@ main {
 }
 
 .btn--ghost:hover {
-  background: var(--accent);
+  background: var(--amber);
   color: var(--bg);
 }
 
