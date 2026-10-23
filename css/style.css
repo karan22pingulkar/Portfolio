@@ -354,12 +354,20 @@ main {
 }
 
 .exp-card__badges span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   font-family: var(--mono);
   font-size: 0.62rem;
-  padding: 0.15rem 0.5rem;
+  padding: 0.22rem 0.55rem;
   border: 1px solid var(--line);
   border-radius: 4px;
   color: var(--text-dim);
+}
+
+.exp-card__badges img {
+  width: 13px;
+  height: 13px;
 }
 
 .exp-card__body { padding: 1.2rem 1.3rem 1.35rem; }
