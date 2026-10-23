@@ -366,8 +366,8 @@ main {
 }
 
 .exp-card__badges img {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }
 
 .exp-card__body { padding: 1.2rem 1.3rem 1.35rem; }
@@ -408,8 +408,8 @@ main {
 }
 
 .exp-card__stack img {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
 .exp-card__impact-label {
