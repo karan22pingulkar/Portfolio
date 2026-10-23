@@ -307,7 +307,7 @@ main {
 
 .exp-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
+  border-color: var(--amber);
 }
 
 .exp-card__header {
@@ -556,7 +556,7 @@ main {
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
+  border-color: var(--amber);
 }
 
 .card__thumb {
@@ -612,7 +612,7 @@ main {
 
 .link-card:hover {
   transform: translateY(-3px);
-  border-color: var(--accent);
+  border-color: var(--amber);
 }
 
 .link-card__icon {
