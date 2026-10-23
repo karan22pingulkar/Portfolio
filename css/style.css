@@ -366,8 +366,8 @@ main {
 }
 
 .exp-card__badges img {
-  width: 13px;
-  height: 13px;
+  width: 18px;
+  height: 18px;
 }
 
 .exp-card__body { padding: 1.2rem 1.3rem 1.35rem; }
@@ -395,13 +395,21 @@ main {
 }
 
 .exp-card__stack span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: var(--mono);
-  font-size: 0.72rem;
-  padding: 0.28rem 0.65rem;
+  font-size: 0.75rem;
+  padding: 0.32rem 0.7rem;
   border: 1px solid var(--line);
   border-radius: 4px;
   background: var(--bg-raised);
   color: var(--accent);
+}
+
+.exp-card__stack img {
+  width: 16px;
+  height: 16px;
 }
 
 .exp-card__impact-label {
