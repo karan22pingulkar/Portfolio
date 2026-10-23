@@ -313,21 +313,53 @@ main {
   aspect-ratio: 21 / 9;
 }
 
-.exp-card__header .photo-frame__placeholder {
-  min-height: 0;
-  border: none;
-  border-bottom: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg-raised);
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-}
-
 .exp-card__header img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.exp-card__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--line);
+  padding: 0.75rem;
+}
+
+.exp-card__brand {
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.exp-card__snippet {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+}
+
+.exp-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.exp-card__badges span {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--text-dim);
 }
 
 .exp-card__body { padding: 1.2rem 1.3rem 1.35rem; }
