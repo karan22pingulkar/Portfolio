@@ -523,6 +523,12 @@ main {
 
 .t-key { color: var(--accent); }
 .t-ok { color: var(--amber); }
+.t-icon {
+  height: 1.05em;
+  width: 1.05em;
+  vertical-align: -0.2em;
+  margin-right: 2px;
+}
 
 .about__bio {
   color: var(--text-dim);
