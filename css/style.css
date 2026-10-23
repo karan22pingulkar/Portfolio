@@ -703,8 +703,9 @@ main {
 
 .footer__meta {
   margin-top: 0.4rem;
-  font-size: 0.72rem;
-  opacity: 0.7;
+  font-size: 0.8rem;
+  opacity: 1;
+  color: var(--text);
 }
 
 /* ================= ANIMATIONS / RESPONSIVE ================= */
