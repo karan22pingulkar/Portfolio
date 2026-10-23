@@ -360,6 +360,8 @@ main {
   border-radius: 5px;
 }
 
+.exp-card__logo--sm { height: 20px; }
+
 .exp-card__brand {
   font-family: var(--mono);
   font-weight: 700;
