@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="monospace">
+  <rect width="640" height="400" fill="#0b1120"/>
+  <rect x="24" y="20" width="592" height="360" rx="10" fill="#0d1420" stroke="#233149" stroke-width="1.5"/>
+  <!-- window chrome -->
+  <circle cx="46" cy="40" r="5" fill="#ff5f57"/>
+  <circle cx="64" cy="40" r="5" fill="#febc2e"/>
+  <circle cx="82" cy="40" r="5" fill="#28c840"/>
+  <text x="110" y="45" fill="#8b96ad" font-size="13">medimart://storefront</text>
+  <line x1="24" y1="58" x2="616" y2="58" stroke="#233149"/>
+  <!-- top bar: brand + search + cart -->
+  <text x="46" y="86" fill="#e8ecf5" font-size="16" font-weight="bold">medi<tspan fill="#7fa3ff">mart</tspan></text>
+  <rect x="200" y="70" width="240" height="24" rx="12" fill="#101827" stroke="#233149"/>
+  <text x="216" y="86" fill="#4d5a72" font-size="11">search medicines...</text>
+  <rect x="500" y="70" width="94" height="24" rx="12" fill="#7fa3ff"/>
+  <text x="516" y="86" fill="#0b1120" font-size="12" font-weight="bold">cart (3)</text>
+  <!-- product grid -->
+  <g>
+    <rect x="46"  y="112" width="168" height="110" rx="8" fill="#101827" stroke="#233149"/>
+    <rect x="58"  y="124" width="144" height="48" rx="5" fill="#16233a"/>
+    <path d="M124 138h12v10h10v12h-10v10h-12v-10h-10v-12h10z" fill="#7fa3ff"/>
+    <text x="58" y="190" fill="#e8ecf5" font-size="11">Paracetamol 500mg</text>
+    <text x="58" y="208" fill="#febc2e" font-size="12" font-weight="bold">₹49</text>
+    <rect x="238" y="112" width="168" height="110" rx="8" fill="#101827" stroke="#233149"/>
+    <rect x="250" y="124" width="144" height="48" rx="5" fill="#16233a"/>
+    <rect x="310" y="136" width="24" height="24" rx="4" fill="#7fa3ff"/>
+    <rect x="318" y="142" width="24" height="24" rx="4" fill="#4d6db3" opacity="0.85"/>
+    <text x="250" y="190" fill="#e8ecf5" font-size="11">Vitamin C Tablets</text>
+    <text x="250" y="208" fill="#febc2e" font-size="12" font-weight="bold">₹129</text>
+    <rect x="430" y="112" width="168" height="110" rx="8" fill="#101827" stroke="#233149"/>
+    <rect x="442" y="124" width="144" height="48" rx="5" fill="#16233a"/>
+    <rect x="500" y="132" width="28" height="32" rx="6" fill="#7fa3ff"/>
+    <rect x="506" y="126" width="16" height="8" rx="3" fill="#4d6db3"/>
+    <text x="442" y="190" fill="#e8ecf5" font-size="11">Digital Thermometer</text>
+    <text x="442" y="208" fill="#febc2e" font-size="12" font-weight="bold">₹249</text>
+    <rect x="46"  y="234" width="168" height="110" rx="8" fill="#101827" stroke="#233149"/>
+    <rect x="58"  y="246" width="144" height="48" rx="5" fill="#16233a"/>
+    <circle cx="130" cy="270" r="16" fill="#7fa3ff"/><rect x="122" y="262" width="16" height="16" rx="3" fill="#0d1420"/>
+    <text x="58" y="312" fill="#e8ecf5" font-size="11">Bandage Roll 5m</text>
+    <text x="58" y="330" fill="#febc2e" font-size="12" font-weight="bold">₹39</text>
+    <rect x="238" y="234" width="168" height="110" rx="8" fill="#101827" stroke="#233149"/>
+    <rect x="250" y="246" width="144" height="48" rx="5" fill="#16233a"/>
+    <ellipse cx="322" cy="270" rx="20" ry="12" fill="#7fa3ff"/>
+    <ellipse cx="322" cy="270" rx="8" ry="12" fill="#0d1420" opacity="0.35"/>
+    <text x="250" y="312" fill="#e8ecf5" font-size="11">Antiseptic Liquid</text>
+    <text x="250" y="330" fill="#febc2e" font-size="12" font-weight="bold">₹89</text>
+    <rect x="430" y="234" width="168" height="110" rx="8" fill="#101827" stroke="#233149"/>
+    <rect x="442" y="246" width="144" height="48" rx="5" fill="#16233a"/>
+    <rect x="496" y="252" width="36" height="20" rx="10" fill="#7fa3ff"/>
+    <rect x="496" y="272" width="36" height="20" rx="10" fill="#4d6db3"/>
+    <text x="442" y="312" fill="#e8ecf5" font-size="11">ORS Sachets x6</text>
+    <text x="442" y="330" fill="#febc2e" font-size="12" font-weight="bold">₹66</text>
+  </g>
+  <!-- footer strip -->
+  <text x="46" y="368" fill="#8b96ad" font-size="11">1000+ products · PWA offline ready · admin CRUD</text>
+  <text x="470" y="368" fill="#28c840" font-size="11">● live</text>
+</svg>
