@@ -101,7 +101,7 @@ body::before {
   transition: color 0.15s;
 }
 
-.nav__links a:hover { color: var(--accent); }
+.nav__links a:hover { color: var(--amber); }
 
 .nav__status {
   display: flex;
@@ -620,7 +620,7 @@ main {
   text-decoration: none;
 }
 
-.card__link:hover { text-decoration: underline; }
+.card__link:hover { text-decoration: underline; color: var(--amber); }
 
 /* ================= LINK CARDS ================= */
 
