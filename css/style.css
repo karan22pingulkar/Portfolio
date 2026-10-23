@@ -121,8 +121,8 @@ body::before {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 8px var(--accent);
+  background: #ff5f57;
+  box-shadow: 0 0 8px #ff5f57;
   animation: pulse 2s infinite;
 }
 

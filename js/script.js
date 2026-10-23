@@ -5,6 +5,22 @@
 // ---- Footer year ----
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// ---- Click-to-copy (email card) ----
+document.querySelectorAll("[data-copy]").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(el.dataset.copy);
+    const cta = el.querySelector(".copy-cta");
+    const original = cta.innerHTML;
+    cta.textContent = "copied to clipboard \u2713";
+    cta.style.color = "#3ddc78";
+    setTimeout(() => {
+      cta.innerHTML = original;
+      cta.style.color = "";
+    }, 1600);
+  });
+});
+
 // ---- Scroll reveal ----
 const revealTargets = document.querySelectorAll(
   ".section__title, .section__kicker, .terminal, .about__bio, .card, .link-card, .exp-card"
