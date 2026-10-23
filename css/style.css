@@ -641,11 +641,12 @@ main {
 }
 
 .link-card__sub {
+  display: block;
   font-family: var(--mono);
   font-size: 0.72rem;
   font-weight: 400;
   color: var(--amber);
-  margin-left: 0.35rem;
+  margin-top: 0.2rem;
   white-space: nowrap;
 }
 
