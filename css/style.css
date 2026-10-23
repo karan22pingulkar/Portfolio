@@ -646,6 +646,7 @@ main {
   font-weight: 400;
   color: var(--amber);
   margin-left: 0.35rem;
+  white-space: nowrap;
 }
 
 .link-card__body p {
