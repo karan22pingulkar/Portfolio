@@ -28,7 +28,8 @@ PowerShell / terminal inside D:\Portfolio:
   git commit -m "describe what you changed"
   git push origin dev
   git switch main
-  git merge dev
+  git pull
+  git merge dev --no-edit
   git push
   git switch dev
 
