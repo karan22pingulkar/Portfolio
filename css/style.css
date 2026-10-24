@@ -399,7 +399,7 @@ body.cursor-hidden [data-copy] { cursor: none; }
 
 .exp-slide .exp-card {
   width: 100%;
-  max-width: 720px;
+  max-width: 560px;
 }
 
 .exp-nav {
@@ -465,7 +465,7 @@ body.cursor-hidden [data-copy] { cursor: none; }
 }
 
 .exp-card__header {
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 21 / 7;
 }
 
 .exp-card__header img {
