@@ -99,7 +99,7 @@ function buildStars() {
       x: Math.random() * starCanvas.width,
       y: Math.random() * starCanvas.height,
       r,
-      a: Math.random() * 0.45 + 0.2,
+      a: Math.random() * 0.4 + 0.45,
       speed: Math.random() * 0.015 + 0.004,
       phase: Math.random() * Math.PI * 2,
       vx: (Math.random() * 0.02 + 0.01) * r,
