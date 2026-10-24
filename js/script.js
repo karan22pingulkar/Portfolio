@@ -164,10 +164,8 @@ revealTargets.forEach((el) => {
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
+      // replay the animation each time the element re-enters the viewport
+      entry.target.classList.toggle("visible", entry.isIntersecting);
     });
   },
   { threshold: 0.12 }
