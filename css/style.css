@@ -390,16 +390,43 @@ body.cursor-hidden [data-copy] { cursor: none; }
 }
 
 .exp-slide {
+  position: relative;
   flex: 0 0 76%;
   min-width: 0;
   display: flex;
   justify-content: center;
-  padding: 0.25rem;
-  opacity: 0.35;
-  filter: blur(3px) saturate(0.6);
+  padding: 1rem 0.25rem 0.25rem;
+  opacity: 0.45;
+  filter: blur(2px) saturate(0.6);
   transform: scale(0.94);
   transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
   pointer-events: none;
+}
+
+/* stacked-deck edges above the active card */
+.exp-slide.active::before,
+.exp-slide.active::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.exp-slide.active::before {
+  top: 0.45rem;
+  left: 6%;
+  right: 6%;
+  opacity: 0.55;
+}
+
+.exp-slide.active::after {
+  top: -0.1rem;
+  left: 9%;
+  right: 9%;
+  opacity: 0.3;
 }
 
 .exp-slide.active {
