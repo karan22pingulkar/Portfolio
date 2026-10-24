@@ -891,6 +891,10 @@ body.cursor-hidden [data-copy] { cursor: none; }
   .status-dot, .cursor, .hero__img { animation: none; }
 }
 
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
 @media (max-width: 820px) {
   .hero {
     grid-template-columns: 1fr;
@@ -899,5 +903,29 @@ body.cursor-hidden [data-copy] { cursor: none; }
   }
   .hero__tagline { margin-inline: auto; }
   .hero__cta { justify-content: center; }
+  .hero__photo { max-width: 300px; }
   .photo-frame { margin-bottom: 2rem; }
+
+  /* carousel fits small screens */
+  .exp__track { margin: 0 2.4rem; }
+  .exp-slide { padding: 0.25rem 1.2rem 0.25rem 0.25rem; }
+  .exp-slide.is-right { transform: translateX(14%) scale(0.85) rotateY(-14deg); }
+  .exp-slide.is-left { transform: translateX(-14%) scale(0.85) rotateY(14deg); }
+  .exp-nav { width: 32px; height: 32px; font-size: 1rem; }
+
+  /* badge rows can wrap */
+  .exp-card__stack,
+  .exp-card__badges { flex-wrap: wrap; }
+
+  /* terminal text wraps instead of overflowing */
+  .terminal__lines { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 560px) {
+  .nav__status { display: none; }
+  .nav { justify-content: center; }
+  .exp__track { margin: 0 1.8rem; }
+  .exp-slide { padding-right: 0.6rem; }
+  .exp-card__body { padding: 1rem 0.9rem 1.2rem; }
+  .footer__meta { font-size: 0.7rem; }
 }
