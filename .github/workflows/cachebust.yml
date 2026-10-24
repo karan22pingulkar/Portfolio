@@ -18,8 +18,8 @@ jobs:
           V="${GITHUB_SHA::8}"
           sed -i "s/style.css?v=[0-9a-zA-Z-]*/style.css?v=$V/; s/script.js?v=[0-9a-zA-Z-]*/script.js?v=$V/" index.html
           if ! git diff --quiet; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git config user.name "Karan"
+            git config user.email "karan22pingulkar@gmail.com"
             git commit -am "chore: cache-bust assets for $GITHUB_SHA" --no-verify
             git push
           fi
