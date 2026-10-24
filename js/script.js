@@ -106,6 +106,16 @@ document.querySelectorAll("[data-copy]").forEach((el) => {
   carousel.addEventListener("mouseenter", () => clearInterval(timer));
   carousel.addEventListener("mouseleave", restart);
 
+  // swipe on touch devices only
+  if (matchMedia("(pointer: coarse)").matches) {
+    let startX = 0;
+    carousel.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 45) go(idx + (dx < 0 ? 1 : -1), true);
+    }, { passive: true });
+  }
+
   go(0);
   if (!matchMedia("(prefers-reduced-motion: reduce)").matches) restart();
 })();
