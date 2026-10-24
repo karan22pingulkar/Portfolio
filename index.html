@@ -64,7 +64,9 @@
       <p class="section__kicker">// WORK - EXPERIENCE</p>
       <h2 class="section__title">Where I've <span class="accent-text">Worked.</span></h2>
 
-      <div class="exp__grid">
+      <div class="exp-carousel">
+        <div class="exp__track">
+        <div class="exp-slide">
         <!-- TODO: swap each header box for a company logo/image -->
         <article class="exp-card">
           <!-- TODO: swap for a company logo image if you have one -->
@@ -104,7 +106,9 @@
             </ul>
           </div>
         </article>
+        </div>
 
+        <div class="exp-slide">
         <article class="exp-card">
           <!-- TODO: swap for a company logo image if you have one -->
           <div class="exp-card__header">
@@ -143,6 +147,12 @@
             </ul>
           </div>
         </article>
+        </div>
+        </div>
+
+        <button class="exp-nav exp-nav--prev" aria-label="Previous experience">&#8249;</button>
+        <button class="exp-nav exp-nav--next" aria-label="Next experience">&#8250;</button>
+        <div class="exp-dots"></div>
       </div>
     </section>
 

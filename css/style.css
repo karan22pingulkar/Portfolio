@@ -378,10 +378,76 @@ body.cursor-hidden [data-copy] { cursor: none; }
 
 /* ================= EXPERIENCE ================= */
 
-.exp__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.25rem;
+.exp-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.exp__track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exp-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0.25rem;
+}
+
+.exp-slide .exp-card {
+  width: 100%;
+  max-width: 720px;
+}
+
+.exp-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(11, 18, 32, 0.8);
+  color: var(--accent);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 2;
+}
+
+.exp-nav:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  background: rgba(11, 18, 32, 1);
+}
+
+.exp-nav--prev { left: 0.5rem; }
+.exp-nav--next { right: 0.5rem; }
+
+.exp-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.exp-dot {
+  width: 26px;
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+  background: var(--line);
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.exp-dot.active {
+  background: var(--amber);
+  width: 38px;
 }
 
 .exp-card {

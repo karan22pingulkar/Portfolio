@@ -60,6 +60,45 @@ document.querySelectorAll("[data-copy]").forEach((el) => {
   });
 });
 
+// ---- Experience carousel ----
+(function () {
+  const carousel = document.querySelector(".exp-carousel");
+  if (!carousel) return;
+  const track = carousel.querySelector(".exp__track");
+  const slides = carousel.querySelectorAll(".exp-slide");
+  const dotsBox = carousel.querySelector(".exp-dots");
+  let idx = 0, timer;
+
+  slides.forEach((_, i) => {
+    const b = document.createElement("button");
+    b.className = "exp-dot";
+    b.setAttribute("aria-label", "Slide " + (i + 1));
+    b.addEventListener("click", () => go(i, true));
+    dotsBox.appendChild(b);
+  });
+  const dots = dotsBox.querySelectorAll(".exp-dot");
+
+  function go(i, user) {
+    idx = (i + slides.length) % slides.length;
+    track.style.transform = "translateX(-" + idx * 100 + "%)";
+    dots.forEach((d, j) => d.classList.toggle("active", j === idx));
+    if (user) restart();
+  }
+
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(() => go(idx + 1), 5000);
+  }
+
+  carousel.querySelector(".exp-nav--prev").addEventListener("click", () => go(idx - 1, true));
+  carousel.querySelector(".exp-nav--next").addEventListener("click", () => go(idx + 1, true));
+  carousel.addEventListener("mouseenter", () => clearInterval(timer));
+  carousel.addEventListener("mouseleave", restart);
+
+  go(0);
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) restart();
+})();
+
 // ---- Typewriter (about bio) ----
 (function () {
   const bio = document.querySelector(".about__bio");
