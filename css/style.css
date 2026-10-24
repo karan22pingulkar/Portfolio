@@ -606,6 +606,7 @@ body.cursor-hidden [data-copy] { cursor: none; }
 .about__bio {
   color: var(--text-dim);
   max-width: 72ch;
+  min-height: 7em;
   font-size: clamp(0.95rem, 2vw, 1.05rem);
 }
 

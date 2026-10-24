@@ -60,6 +60,46 @@ document.querySelectorAll("[data-copy]").forEach((el) => {
   });
 });
 
+// ---- Typewriter (about bio) ----
+(function () {
+  const bio = document.querySelector(".about__bio");
+  if (!bio) return;
+  // split source into segments at <br>, normalize whitespace per segment
+  const segments = bio.innerHTML
+    .split(/<br\s*\/?>/i)
+    .map((s) => s.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim());
+  const full = [];
+  segments.forEach((seg, idx) => {
+    for (const ch of seg) full.push(ch);
+    if (idx < segments.length - 1) full.push("\n");
+  });
+  bio.textContent = "";
+
+  let i = 0;
+  const caret = document.createElement("span");
+  caret.className = "cursor";
+  caret.textContent = "_";
+
+  function type() {
+    if (i >= full.length) return;
+    const ch = full[i++];
+    if (ch === "\n") {
+      bio.appendChild(document.createElement("br"));
+    } else {
+      bio.appendChild(document.createTextNode(ch));
+    }
+    bio.appendChild(caret);
+    setTimeout(type, ch === "\n" ? 180 : 18 + Math.random() * 30);
+  }
+
+  new IntersectionObserver((entries, obs) => {
+    if (entries[0].isIntersecting) {
+      type();
+      obs.disconnect();
+    }
+  }, { threshold: 0.4 }).observe(bio);
+})();
+
 // ---- Scroll reveal ----
 const revealTargets = document.querySelectorAll(
   ".section__title, .section__kicker, .terminal, .about__bio, .card, .link-card, .exp-card"
