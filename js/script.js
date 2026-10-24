@@ -80,9 +80,18 @@ document.querySelectorAll("[data-copy]").forEach((el) => {
 
   function go(i, user) {
     idx = (i + slides.length) % slides.length;
-    // slides are 76% wide; center the active one
-    track.style.transform = "translateX(" + (12 - idx * 76) + "%)";
-    slides.forEach((s, j) => s.classList.toggle("active", j === idx));
+    const n = slides.length;
+    slides.forEach((s, j) => {
+      s.classList.remove("active", "is-left", "is-right");
+      if (j === idx) {
+        s.classList.add("active");
+      } else {
+        // circular offset: shortest path around the ring
+        let d = (j - idx + n) % n;
+        if (d > n / 2) d -= n;
+        s.classList.add(d > 0 ? "is-right" : "is-left");
+      }
+    });
     dots.forEach((d, j) => d.classList.toggle("active", j === idx));
     if (user) restart();
   }

@@ -380,60 +380,47 @@ body.cursor-hidden [data-copy] { cursor: none; }
 
 .exp-carousel {
   position: relative;
-  overflow: hidden;
-  border-radius: 12px;
+  perspective: 1400px;
 }
 
 .exp__track {
-  display: flex;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
 }
 
 .exp-slide {
-  position: relative;
-  flex: 0 0 76%;
-  min-width: 0;
+  position: absolute;
+  inset: 0;
   display: flex;
   justify-content: center;
-  padding: 1rem 0.25rem 0.25rem;
-  opacity: 0.45;
-  filter: blur(2px) saturate(0.6);
-  transform: scale(0.94);
-  transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+  padding: 0.25rem;
+  opacity: 0;
+  filter: blur(1.5px) saturate(0.7);
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.65s ease, filter 0.65s ease;
   pointer-events: none;
+  z-index: 1;
 }
 
-/* stacked-deck edges above the active card */
-.exp-slide.active::before,
-.exp-slide.active::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  background: var(--bg-panel);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  z-index: -1;
-}
-
-.exp-slide.active::before {
-  top: 0.45rem;
-  left: 6%;
-  right: 6%;
+.exp-slide.is-right {
   opacity: 0.55;
+  transform: translateX(52%) scale(0.78) rotateY(-32deg);
+  z-index: 1;
 }
 
-.exp-slide.active::after {
-  top: -0.1rem;
-  left: 9%;
-  right: 9%;
-  opacity: 0.3;
+.exp-slide.is-left {
+  opacity: 0.55;
+  transform: translateX(-52%) scale(0.78) rotateY(32deg);
+  z-index: 1;
 }
 
 .exp-slide.active {
+  position: relative;
   opacity: 1;
   filter: none;
-  transform: none;
+  transform: translateX(0) scale(1) rotateY(0);
   pointer-events: auto;
+  z-index: 3;
 }
 
 .exp-slide .exp-card {
