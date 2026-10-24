@@ -104,7 +104,12 @@ document.querySelectorAll("[data-copy]").forEach((el) => {
 const revealTargets = document.querySelectorAll(
   ".section__title, .section__kicker, .terminal, .about__bio, .card, .link-card, .exp-card"
 );
-revealTargets.forEach((el) => el.classList.add("reveal"));
+revealTargets.forEach((el) => {
+  el.classList.add("reveal");
+  // stagger siblings so grids cascade in
+  const idx = Array.prototype.indexOf.call(el.parentElement.children, el);
+  el.style.setProperty("--rd", Math.min(idx * 0.09, 0.45) + "s");
+});
 
 const observer = new IntersectionObserver(
   (entries) => {
