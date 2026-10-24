@@ -80,7 +80,9 @@ document.querySelectorAll("[data-copy]").forEach((el) => {
 
   function go(i, user) {
     idx = (i + slides.length) % slides.length;
-    track.style.transform = "translateX(-" + idx * 100 + "%)";
+    // slides are 76% wide; center the active one
+    track.style.transform = "translateX(" + (12 - idx * 76) + "%)";
+    slides.forEach((s, j) => s.classList.toggle("active", j === idx));
     dots.forEach((d, j) => d.classList.toggle("active", j === idx));
     if (user) restart();
   }
