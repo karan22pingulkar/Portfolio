@@ -93,15 +93,20 @@ function buildStars() {
     450,
     Math.floor((starCanvas.width * starCanvas.height) / (1000 * dpr))
   );
-  stars = Array.from({ length: count }, () => ({
-    x: Math.random() * starCanvas.width,
-    y: Math.random() * starCanvas.height,
-    r: (Math.random() * 0.7 + 0.25) * dpr,
-    a: Math.random() * 0.45 + 0.2,
-    speed: Math.random() * 0.015 + 0.004,
-    phase: Math.random() * Math.PI * 2,
-    tint: "235,240,250",
-  }));
+  stars = Array.from({ length: count }, () => {
+    const r = (Math.random() * 0.7 + 0.25) * dpr;
+    return {
+      x: Math.random() * starCanvas.width,
+      y: Math.random() * starCanvas.height,
+      r,
+      a: Math.random() * 0.45 + 0.2,
+      speed: Math.random() * 0.015 + 0.004,
+      phase: Math.random() * Math.PI * 2,
+      vx: (Math.random() * 0.02 + 0.01) * r,
+      vy: (Math.random() * 0.05 + 0.02) * r,
+      tint: "235,240,250",
+    };
+  });
 }
 
 function drawStars(t) {
@@ -116,6 +121,13 @@ function drawStars(t) {
 }
 
 function animateStars(t) {
+  const w = starCanvas.width, h = starCanvas.height;
+  for (const s of stars) {
+    s.x += s.vx;
+    s.y += s.vy;
+    if (s.y - s.r > h) { s.y = -s.r; s.x = Math.random() * w; }
+    if (s.x - s.r > w) { s.x = -s.r; s.y = Math.random() * h; }
+  }
   drawStars(t);
   requestAnimationFrame(animateStars);
 }
