@@ -5,6 +5,45 @@
 // ---- Footer year ----
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// ---- Custom cursor (dot + trailing ring) ----
+(function () {
+  const dot = document.querySelector(".cursor-dot");
+  const ring = document.querySelector(".cursor-ring");
+  if (!dot || !ring || matchMedia("(pointer: coarse)").matches) return;
+
+  document.body.classList.add("cursor-hidden");
+  let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
+
+  addEventListener("mousemove", (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.left = mx + "px";
+    dot.style.top = my + "px";
+  });
+
+  (function follow() {
+    rx += (mx - rx) * 0.16;
+    ry += (my - ry) * 0.16;
+    ring.style.left = rx + "px";
+    ring.style.top = ry + "px";
+    requestAnimationFrame(follow);
+  })();
+
+  document.querySelectorAll("a, button, [data-copy]").forEach((el) => {
+    el.addEventListener("mouseenter", () => ring.classList.add("is-hover"));
+    el.addEventListener("mouseleave", () => ring.classList.remove("is-hover"));
+  });
+
+  document.addEventListener("mouseleave", () => {
+    dot.style.opacity = "0";
+    ring.style.opacity = "0";
+  });
+  document.addEventListener("mouseenter", () => {
+    dot.style.opacity = "1";
+    ring.style.opacity = "";
+  });
+})();
+
 // ---- Click-to-copy (email card) ----
 document.querySelectorAll("[data-copy]").forEach((el) => {
   el.addEventListener("click", (e) => {
