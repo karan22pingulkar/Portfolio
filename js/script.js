@@ -90,8 +90,8 @@ function buildStars() {
   starCanvas.width = starCanvas.offsetWidth * dpr;
   starCanvas.height = starCanvas.offsetHeight * dpr;
   const count = Math.min(
-    450,
-    Math.floor((starCanvas.width * starCanvas.height) / (1000 * dpr))
+    800,
+    Math.floor((starCanvas.width * starCanvas.height) / (600 * dpr))
   );
   stars = Array.from({ length: count }, () => {
     const r = (Math.random() * 0.7 + 0.25) * dpr;
