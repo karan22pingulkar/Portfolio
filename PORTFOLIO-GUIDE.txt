@@ -1,0 +1,132 @@
+===========================================================
+   KARAN'S PORTFOLIO — CHEAT SHEET
+   (everything you need to run this site yourself)
+===========================================================
+
+YOUR LIVE SITE
+--------------
+  https://karan-pingulkar.is-a.dev        <- custom domain
+  https://www.karan-pingulkar.is-a.dev    <- also works
+  https://karan22pingulkar.github.io/Portfolio   <- redirects to above
+
+HOSTING: GitHub Pages (completely free, forever)
+  Serves whatever is on the "main" branch of
+  github.com/karan22pingulkar/Portfolio
+  Every push to main = auto-deploy in ~30 seconds.
+
+DOMAIN: is-a.dev free subdomain, registered via
+  github.com/is-a-dev/register (your file: domains/karan-pingulkar.json)
+
+
+============================================================
+THE ONLY COMMAND YOU NEED TO KNOW — "SHIP IT"
+============================================================
+After editing any file (and saving with Ctrl+S), run this in
+PowerShell / terminal inside D:\Portfolio:
+
+  git add -A
+  git commit -m "describe what you changed"
+  git push origin dev
+  git switch main
+  git merge dev
+  git push
+  git switch dev
+
+That's it. The site updates live in ~30 seconds.
+
+BRANCHES EXPLAINED
+  dev  = where you work (safe, nothing goes live)
+  main = what the public sees (GitHub Pages builds from this)
+
+
+============================================================
+COMMON TASKS
+============================================================
+
+UPDATE YOUR RESUME
+  1. Paste new PDF as:  D:\Portfolio\assets\resume\resume.pdf
+     (filename MUST stay resume.pdf — overwrite the old one)
+  2. Run the SHIP IT commands above.
+  Done — the [ Resume ] button downloads it.
+
+UPDATE YOUR EMAIL / LINKS
+  Edit index.html, search for the address, replace, SHIP IT.
+  GitHub:  github.com/karan22pingulkar
+  LinkedIn: linkedin.com/in/karan-pingulkar-0a18ab129
+
+ADD / CHANGE A PROJECT CARD
+  index.html -> find the <section id="lab"> block.
+  Copy an existing <article class="card"> and edit it.
+  Thumbnails live in assets/ (svg files) — swap the src.
+
+CHANGE TEXT ANYWHERE
+  index.html holds ALL the text. Search for the word, edit it.
+  No build step, no tools needed — it's plain HTML.
+
+CHANGE COLORS / STYLE
+  css/style.css — palette variables are at the top:
+    --accent: #7fa3ff   (blue — headings, cursor, glows)
+    --amber:  #ffd166   (yellow — hovers, subtitles)
+    --bg:     dark space background
+
+
+============================================================
+IF SOMETHING LOOKS BROKEN
+============================================================
+
+"MY CHANGES AREN'T SHOWING"
+  Your browser cached the old files. Press  Ctrl+Shift+R
+  (hard refresh). Or open the site in an incognito window.
+  This fixes it 90% of the time.
+
+"GIT STATUS SHOWS A CONFLICT / FILE IS NEWER ERROR IN EDITOR"
+  It means the file on disk is newer than what's in the editor.
+  Close the file tab WITHOUT saving, reopen it. Done.
+
+"COMMIT DIDN'T COUNT ON MY GITHUB GRAPH"
+  Commits only count once they're merged to main AND pushed.
+  Also check: github.com/settings/emails — your git email
+  (karan22pingulkar@gmail.com) must be listed there.
+
+"THE DOMAIN STOPPED WORKING"
+  - Check github.com/karan22pingulkar/Portfolio -> Settings -> Pages
+    is still "main / root" and custom domain is filled in.
+  - is-a.dev records live in your fork: github.com/karan22pingulkar/register
+    (domains/karan-pingulkar.json must say CNAME karan22pingulkar.github.io)
+
+"I MESSED SOMETHING UP"
+  Nothing is ever lost — git has every version.
+  See history:     git log --oneline
+  Undo last commit (keep the changes):  git reset --soft HEAD~1
+  Restore a file to last commit:        git checkout -- filename
+
+
+============================================================
+PROJECT FILES MAP
+============================================================
+  D:\Portfolio\
+    index.html            <- ALL content/text (edit me most)
+    css\style.css         <- colors, layout, animations
+    js\script.js          <- cursor, starfield, copy-email, reveals
+    assets\
+      hacker-illustration.png  <- hero art (right side of top section)
+      favicon -> assets\icons\favicon.svg
+      resume\resume.pdf   <- your resume (resume button downloads this)
+      icons\              <- tech + social logos (svg)
+      *-thumb.svg         <- project card images
+    PORTFOLIO-GUIDE.txt   <- this file
+
+USEFUL COMMANDS
+  git status          - what's changed / what needs committing
+  git log --oneline   - your commit history
+  git branch -vv      - which branch you're on + sync state
+
+
+============================================================
+ACCOUNTS YOU NOW HAVE
+============================================================
+  GitHub     karan22pingulkar         (code + Pages hosting)
+  Netlify    karancodecraft.netlify.app  (OLD host - can ignore/delete)
+  is-a.dev   karan-pingulkar.is-a.dev (free domain, via GitHub PR)
+
+-- made with Devin, Oct 2026. you've got this. --
