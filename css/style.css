@@ -391,7 +391,7 @@ body.cursor-hidden [data-copy] { cursor: none; }
   position: absolute;
   inset: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0.25rem;
   opacity: 0;
   filter: blur(1.5px) saturate(0.7);
