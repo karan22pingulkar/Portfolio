@@ -403,14 +403,14 @@ body.cursor-hidden [data-copy] { cursor: none; }
 }
 
 .exp-slide.is-right {
-  opacity: 0.55;
-  transform: translateX(52%) scale(0.78) rotateY(-32deg);
+  opacity: 0.6;
+  transform: translateX(28%) scale(0.82) rotateY(-20deg);
   z-index: 1;
 }
 
 .exp-slide.is-left {
-  opacity: 0.55;
-  transform: translateX(-52%) scale(0.78) rotateY(32deg);
+  opacity: 0.6;
+  transform: translateX(-28%) scale(0.82) rotateY(20deg);
   z-index: 1;
 }
 
@@ -442,7 +442,7 @@ body.cursor-hidden [data-copy] { cursor: none; }
   line-height: 1;
   cursor: pointer;
   transition: all 0.25s ease;
-  z-index: 2;
+  z-index: 10;
 }
 
 .exp-nav:hover {
