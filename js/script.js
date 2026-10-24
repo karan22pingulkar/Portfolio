@@ -100,27 +100,24 @@ function buildStars() {
       y: Math.random() * starCanvas.height,
       r,
       a: Math.random() * 0.4 + 0.45,
-      speed: Math.random() * 0.015 + 0.004,
-      phase: Math.random() * Math.PI * 2,
-      vx: (Math.random() * 0.02 + 0.01) * r,
-      vy: (Math.random() * 0.05 + 0.02) * r,
+      vx: (Math.random() * 0.05 + 0.02) * r,
+      vy: (Math.random() * 0.12 + 0.05) * r,
       tint: "235,240,250",
     };
   });
 }
 
-function drawStars(t) {
+function drawStars() {
   sctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
   for (const s of stars) {
-    const tw = reduceMotion ? 1 : 0.7 + 0.3 * Math.sin(s.phase + t * s.speed);
     sctx.beginPath();
     sctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-    sctx.fillStyle = "rgba(" + s.tint + "," + (s.a * tw).toFixed(3) + ")";
+    sctx.fillStyle = "rgba(" + s.tint + "," + s.a.toFixed(3) + ")";
     sctx.fill();
   }
 }
 
-function animateStars(t) {
+function animateStars() {
   const w = starCanvas.width, h = starCanvas.height;
   for (const s of stars) {
     s.x += s.vx;
@@ -128,7 +125,7 @@ function animateStars(t) {
     if (s.y - s.r > h) { s.y = -s.r; s.x = Math.random() * w; }
     if (s.x - s.r > w) { s.x = -s.r; s.y = Math.random() * h; }
   }
-  drawStars(t);
+  drawStars();
   requestAnimationFrame(animateStars);
 }
 
