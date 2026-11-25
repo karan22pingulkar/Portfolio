@@ -362,11 +362,10 @@ body.cursor-hidden [data-copy] { cursor: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 62%;
-  object-view-box: inset(20% 8% 10% 16%);
+  object-position: 38% 86%;
   filter: brightness(0.96) saturate(0.98);
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 78%);
-  mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 78%);
+  -webkit-mask-image: radial-gradient(circle farthest-side at 47% 54%, #000 55%, transparent 92%);
+  mask-image: radial-gradient(circle farthest-side at 47% 54%, #000 55%, transparent 92%);
   animation: hero-float 6s ease-in-out infinite;
 }
 
